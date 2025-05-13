@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday ANNY 🎁</title>
+
+  <!-- SwiperJS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <link rel="shortcut icon" href="pics/Anny-1.jpeg" type="image/x-icon">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Prompt', sans-serif;
+      background: linear-gradient(to bottom, #fff1f5, #ffeef8);
+      text-align: center;
+      color: #333;
+    }
+
+    #gift-box {
+      margin-top: 100px;
+      cursor: pointer;
+      animation: bounce 2s infinite;
+    }
+
+    #gift-box img {
+      width: 200px;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    #content {
+      display: none;
+      padding: 20px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .swiper {
+      width: 90%;
+      max-width: 600px;
+      margin: 30px auto;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    .swiper-slide img {
+      width: 100%;
+      height: auto;
+    }
+
+    .greeting {
+      margin: 30px auto;
+      max-width: 600px;
+      background-color: #fff0f6;
+      border-radius: 10px;
+      padding: 20px;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- กล่องของขวัญ -->
+  <div id="gift-box">
+    <img src="pics/gift.png" alt="Gift Box" /> 
+    <p>ຄຼິກເພື່ອເປີດຂອງຂວິນ 🎁</p>
+  </div>
+
+  <!-- ส่วนเนื้อหาหลังเปิด -->
+  <div id="content">
+    <h1>Happy Birthday 🎂 "Anny" 🎂</h1>
+
+    <!-- Swiper Slider -->
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="pics/Anny-1.jpeg" alt=""></div>
+        <div class="swiper-slide"><img src="pics/Anny-2.jpeg" alt=""></div>
+        <div class="swiper-slide"><img src="pics/Anny-1.jpeg" alt=""></div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- ข้อความอวยพร -->
+    <div class="greeting">
+      ເຖິງ: ຄຸນແຟນ 💖 Anny 💖 ທີ່ຮັກ<br><br>
+      ສຸກສັນວັນຄ້າຍວັນເກີດເດີ! ຂໍໃຫ້ປີນີ້ເປັນປີທີ່ດີທີ່ສົດໃສຂອງເຈົ້າ ເຕັມໄປດ້ວຍຮອຍຍິ້ມ, ສຽງຫົວ ແລະ ມີພະລັງບວກໃນທຸກໆວັນ
+      ຂໍໃຫ້ເຈົ້າມີຄວາມສຸກກັບທຸກກ້າວທີ່ເດີນ ບໍ່ວ່າຈະພົບກັບບັນຫາ ຫຼື ອຸປະສັກໃດໆກໍ່ຕາມ ກໍ່ຂໍໃຫ້ເຈົ້າຜ່ານໄປໄດ້ດ້ວຍຫົວໃຈທີ່ເຂັ້ມແຂງຢ່າງທີ່ເຈົ້າເປັນຢູ່<br><br>
+      ດີໃຈທີ່ໄດ້ຮູ້ຈັກ, ໄດ້ຮັກ, ໄດ້ຢູ່ດູແລຄຽງຂ້າງກັນ ແລະ ດີໃຈທີ່ໄດ້ເປັນແຟນກັບເຈົ້າ ຂອບໃຈທີ່ຢູ່ຂ້າງກັນໃນທຸກຊ່ວງເວລາ ແລະ ຕະຫຼອດໄປນະຄຸນແຟນ...<br><br>💕 ຮັກແກ້ມອ້ວນນ 💕
+    </div>
+  </div>
+
+  <!-- เพลง -->
+  <audio id="birthday-song" src="music/my-music-2.mp3"></audio>
+
+  <!-- SwiperJS Script -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    const giftBox = document.getElementById('gift-box');
+    const content = document.getElementById('content');
+    const audio = document.getElementById('birthday-song');
+
+    giftBox.addEventListener('click', () => {
+      giftBox.style.display = 'none';
+      content.style.display = 'block';
+      audio.play();
+
+      new Swiper('.swiper', {
+        loop: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: '.swiper-pagination',
+        },
+      });
+    });
+  </script>
+
+</body>
+</html>
